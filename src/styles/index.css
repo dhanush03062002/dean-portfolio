@@ -1,0 +1,75 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --border-color: rgba(224, 224, 224, 0.63);
+  --border-solid: #e5e5e5;
+  --bg-subtle: #f8f8f8;
+  --text-primary: #000000;
+  --text-muted: #616161;
+  --accent-cyan: #02d4f5;
+  --accent-blue: #0099ff;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Host Grotesk', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: var(--text-primary);
+  background-color: #ffffff;
+  overflow-x: hidden;
+  /* Default cursor styles */
+}
+
+@media (hover: hover) and (pointer: fine) {
+  body {
+    cursor: none;
+  }
+  a, button, [role="button"], input, textarea, select, label {
+    cursor: none !important;
+  }
+}
+
+/* Custom technical border grid utilities */
+.tech-border {
+  border-color: var(--border-color);
+}
+
+.tech-grid-border {
+  border: 1px solid var(--border-color);
+}
+
+/* Hide scrollbar for tabs / marquees */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Rolling text effect helper */
+.rolling-char-container {
+  display: inline-flex;
+  flex-direction: column;
+  height: 1.2em;
+  overflow: hidden;
+}
+.rolling-char {
+  display: inline-block;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.group:hover .rolling-char {
+  transform: translateY(-100%);
+}
+
+/* Smooth transitions */
+* {
+  box-sizing: border-box;
+}
+
+::selection {
+  background-color: #000000;
+  color: #ffffff;
+}
