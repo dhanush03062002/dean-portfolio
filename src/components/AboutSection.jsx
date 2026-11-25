@@ -210,7 +210,7 @@ export default function AboutSection() {
                   >
                     {/* Tool Icon with 3D Float */}
                     <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-white border border-neutral-200 p-2 shadow-sm flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
-                      <img src={tool.icon} alt={tool.name} className="w-full h-full object-contain" />
+                      <img src={tool.icon} alt={tool.name} className="w-full h-full object-contain" loading="lazy" decoding="async" />
                     </div>
 
                     <div className="flex-1 min-w-0">

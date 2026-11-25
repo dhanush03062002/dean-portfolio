@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, Suspense, lazy } from 'react';
 import { BrowserRouter, Routes, Route, useParams } from 'react-router-dom';
 import CustomCursor from './components/CustomCursor';
 import GhostCursor from './components/GhostCursor';
@@ -15,8 +15,22 @@ import BottomExperience from './components/BottomExperience';
 import CardStackScroll from './components/CardStackScroll';
 import Footer from './components/Footer';
 import ContactModal from './components/ContactModal';
-import ProjectsPage from './pages/ProjectsPage';
-import ProjectDetailPage from './components/ProjectDetailPage';
+
+// ── Lazy-loaded routes — only downloaded when user navigates there ────────────
+const ProjectsPage = lazy(() => import('./pages/ProjectsPage'));
+const ProjectDetailPage = lazy(() => import('./components/ProjectDetailPage'));
+
+// ── Minimal loading fallback ───────────────────────────────────────────────────
+function PageLoader() {
+  return (
+    <div className="min-h-screen flex items-center justify-center bg-white dark:bg-neutral-950">
+      <div className="flex flex-col items-center gap-4">
+        <div className="w-10 h-10 rounded-full border-2 border-neutral-200 border-t-black dark:border-t-white animate-spin" />
+        <span className="text-xs font-bold uppercase tracking-widest text-neutral-400">Loading…</span>
+      </div>
+    </div>
+  );
+}
 
 // ─── Project detail wrapper — reads :id from URL ─────────────────────────────
 function ProjectDetailWrapper({ onOpenContact }) {
@@ -58,28 +72,32 @@ function AppInner() {
           }
         />
 
-        {/* ── Projects listing page ── */}
+        {/* ── Projects listing page — lazy loaded ── */}
         <Route
           path="/projects"
           element={
             <div className="min-h-screen bg-white text-black dark:bg-neutral-950 dark:text-neutral-100 font-sans selection:bg-black selection:text-white dark:selection:bg-white dark:selection:text-black">
               <Navbar onOpenContact={handleOpenContact} />
               <main>
-                <ProjectsPage onOpenContact={handleOpenContact} />
+                <Suspense fallback={<PageLoader />}>
+                  <ProjectsPage onOpenContact={handleOpenContact} />
+                </Suspense>
               </main>
               <Footer onOpenContact={handleOpenContact} />
             </div>
           }
         />
 
-        {/* ── Individual project detail page ── */}
+        {/* ── Individual project detail page — lazy loaded ── */}
         <Route
           path="/projects/:id"
           element={
             <div className="min-h-screen bg-white text-black dark:bg-neutral-950 dark:text-neutral-100 font-sans selection:bg-black selection:text-white dark:selection:bg-white dark:selection:text-black">
               <Navbar onOpenContact={handleOpenContact} />
               <main>
-                <ProjectDetailWrapper onOpenContact={handleOpenContact} />
+                <Suspense fallback={<PageLoader />}>
+                  <ProjectDetailWrapper onOpenContact={handleOpenContact} />
+                </Suspense>
               </main>
               <Footer onOpenContact={handleOpenContact} />
             </div>

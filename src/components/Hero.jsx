@@ -114,6 +114,8 @@ export default function Hero({ onOpenContact }) {
                 src={PROFILE.avatar} 
                 alt="Dakshnamoorthy portrait" 
                 className="w-full h-full object-cover object-top scale-110 group-hover:scale-115 transition-transform duration-500"
+                fetchpriority="high"
+                decoding="async"
               />
 
               {/* Looping ambient video overlay matching Framer */}

@@ -51,6 +51,7 @@ function SkillPill({ skill }) {
             alt={skill.name}
             className="w-full h-full object-contain"
             loading="lazy"
+            decoding="async"
           />
         ) : (
           <span className="text-lg leading-none">{skill.icon}</span>
