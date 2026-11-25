@@ -1,7 +1,7 @@
 import React, { useState, Suspense, lazy } from 'react';
 import { BrowserRouter, Routes, Route, useParams } from 'react-router-dom';
 import CustomCursor from './components/CustomCursor';
-import GhostCursor from './components/GhostCursor';
+import TubesCursor from './components/TubesCursor';
 import useLenis from './hooks/useLenis';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
@@ -133,35 +133,8 @@ function AppInner() {
 export default function App() {
   return (
     <BrowserRouter>
-      {/* GhostCursor Smoke fluid mouse effect: active on all balance/remaining sections */}
-      <GhostCursor
-        color="#B497CF"
-        size={56}
-        trailLength={72}
-        inertia={0.55}
-        turbulence={0.7}
-        drift={0.7}
-        bloomStrength={0.9}
-        grainIntensity={0.09}
-        detail={1}
-        brightness={1.2}
-        bloomRadius={1}
-        edgeIntensity={0}
-        fadeDelayMs={1000}
-        fadeDurationMs={1500}
-        clickPuff
-        intro={false}
-        theme="light"
-        excludeSelector="#hero"
-        style={{
-          position: 'fixed',
-          inset: 0,
-          width: '100vw',
-          height: '100vh',
-          pointerEvents: 'none',
-          zIndex: 9998,
-        }}
-      />
+      {/* 3D Neon Tubes mouse cursor effect */}
+      <TubesCursor />
       <CustomCursor />
       <AppInner />
     </BrowserRouter>
