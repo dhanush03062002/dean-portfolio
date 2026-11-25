@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
-import { ArrowUpRight } from 'lucide-react';
+import { ArrowUpRight, Download } from 'lucide-react';
 import { PROFILE } from '../assets/constants';
 import CornerCross from './CornerCross';
 import TextReveal from './TextReveal';
@@ -164,16 +164,17 @@ export default function Hero({ onOpenContact }) {
             transition={{ duration: 0.6, delay: 0.7, ease: [0.16, 1, 0.3, 1] }}
             className="mt-6 sm:mt-10 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 w-full sm:w-auto relative z-10"
           >
-            {/* Primary CTA Button: "i Want to Chat" */}
-            <button
-              onClick={onOpenContact}
+            {/* Primary CTA Button: "Download Resume" */}
+            <a
+              href={PROFILE.resumeUrl || "/Dakshnamoorthy_Resume.pdf"}
+              download="Dakshnamoorthy_Resume.pdf"
               className="w-full sm:w-auto group flex items-center justify-center gap-3 px-6 sm:px-7 py-3 sm:py-3.5 rounded-full bg-black text-white hover:bg-neutral-800 transition-all duration-300 shadow-md hover:shadow-lg cursor-pointer hover:scale-[1.02] active:scale-[0.98]"
             >
-              <span className="font-sans text-sm sm:text-base font-medium">i Want to Chat</span>
+              <span className="font-sans text-sm sm:text-base font-medium">Download Resume</span>
               <div className="relative flex items-center justify-center w-5 h-5 rounded-full bg-neutral-800 border border-neutral-700">
-                <span className="w-2 h-2 rounded-full bg-cyan-400 group-hover:scale-125 transition-transform animate-pulse shadow-[0_0_8px_#02d4f5]"></span>
+                <Download size={13} className="text-cyan-400 group-hover:translate-y-0.5 transition-transform" />
               </div>
-            </button>
+            </a>
 
             {/* Secondary CTA: Explore Works */}
             <a

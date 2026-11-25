@@ -13,7 +13,7 @@ export const PROFILE = {
   currentCompany: "Amrithaa Private Ltd",
   experienceYears: "2+ Years",
   completedProjects: "20+ Projects",
-  resumeUrl: "#"
+  resumeUrl: "/Dakshnamoorthy_Resume.pdf"
 };
 
 export const SOCIAL_LINKS = [
@@ -25,77 +25,212 @@ export const SOCIAL_LINKS = [
 ];
 
 export const PROJECTS = [
+  // ── UI/UX Design Projects ──
   {
     id: "factory-energy",
     title: "Factory Energy Monitoring",
     category: "IoT & Industrial Dashboard",
+    categoryType: "ui-ux",
     year: "2024",
     image: "https://static.wixstatic.com/media/581991_244ac4c2707a4db19f97a12ac0c4c489~mv2.png",
     description: "Real-time industrial IoT dashboard for monitoring factory machine energy consumption, power spikes, machine health, and energy optimization metrics.",
-    tags: ["UI/UX Design", "Dashboard", "IoT", "Figma"]
+    tags: ["UI/UX Design", "Dashboard", "IoT", "Figma"],
+    liveUrl: "https://www.figma.com/proto/pA1u8hf6fl8N5gVxT1pIw1/Factory-Energy-Monitoring-Design?page-id=49%3A2854&node-id=49-2855&viewport=261%2C320%2C0.06&t=rniT55WPgp5W51zl-1&scaling=scale-down-width&content-scaling=fixed&starting-point-node-id=49%3A2855"
   },
   {
     id: "ai-business",
     title: "AI Business Development",
     category: "Enterprise AI Platform",
+    categoryType: "ui-ux",
     year: "2024",
     image: "https://static.wixstatic.com/media/581991_3a189551d3fd49b895c8bdaa1857f95d~mv2.png",
     description: "AI-driven corporate intelligence dashboard that transforms raw organizational metrics into predictive insights and automated strategic workflows.",
-    tags: ["Product Design", "AI / SaaS", "Dashboard", "Analytics"]
+    tags: ["Product Design", "AI / SaaS", "Dashboard", "Analytics"],
+    liveUrl: "https://www.figma.com/proto/I0HWZ1952y1ApQXkKMBbB6/Minsky-Design--Figma?page-id=0%3A1&node-id=50-3701&viewport=443%2C78%2C0.09&t=2Eywmtd6H59BpJ8j-1&scaling=min-zoom&content-scaling=fixed"
   },
   {
     id: "make-shift",
     title: "Make Shift",
     category: "On-Demand Service Booking",
+    categoryType: "ui-ux",
     year: "2024",
     image: "https://static.wixstatic.com/media/581991_ee2aeebfadb848239fd35ca589f1f573~mv2.png",
     description: "End-to-end mobile application for instant home and artisan service bookings with live pro tracking, calendar scheduling, and escrow payments.",
-    tags: ["Mobile App", "iOS & Android", "UI/UX", "User Journey"]
+    tags: ["Mobile App", "iOS & Android", "UI/UX", "User Journey"],
+    liveUrl: "https://www.figma.com/design/MLrzTUW38a3aV1v5y10Y8m/Make-Shift?node-id=0-1&t=lIKHiNMwbMfuxXsY-1"
   },
   {
     id: "bookmywage",
     title: "Bookmywage",
     category: "Fintech & Wage Management",
+    categoryType: "ui-ux",
     year: "2024",
     image: "https://static.wixstatic.com/media/581991_6e7f546103414833a05096a3a9784c33~mv2.png",
     description: "Smart wage streaming and shift booking platform allowing blue-collar professionals to manage schedules, log hours, and receive instant payouts.",
-    tags: ["Fintech", "Mobile App", "Prototyping", "Design System"]
+    tags: ["Fintech", "Mobile App", "Prototyping", "Design System"],
+    liveUrl: "https://www.figma.com/design/lDRo4ELZn6AKyqaNuqz8yl/BOOK-MY-WAGE?node-id=72-825&t=PrF52Ja7xtPMKNjE-1"
   },
   {
     id: "doctor-appointment",
     title: "Doctor Appointment App",
     category: "Healthcare & Teleconsultation",
+    categoryType: "ui-ux",
     year: "2024",
     image: "https://static.wixstatic.com/media/581991_cd3ac05df3fc4ca0852142be490b92a5~mv2.png",
     description: "Patient-centered healthcare application offering instant doctor discovery, appointment slots, video consultation, and digital prescriptions.",
-    tags: ["Healthcare", "UX Research", "Mobile App", "Figma"]
-  },
-  {
-    id: "mymediater",
-    title: "Mymediater",
-    category: "Mediation & Legal Tech",
-    year: "2024",
-    image: "https://static.wixstatic.com/media/581991_06e78859015f48bfa5d92c330c679f20~mv2.png",
-    description: "Dispute resolution and online mediation platform with confidential case rooms, interactive milestone trackers, and document review.",
-    tags: ["Legal Tech", "Web Platform", "UI/UX", "Product Design"]
+    tags: ["Healthcare", "UX Research", "Mobile App", "Figma"],
+    liveUrl: "https://www.figma.com/design/tVAC1MviZm2Fi13pVXgmOw/Doctor-appointment---Project--?node-id=0-1&t=OWbB76jPTtm7K7je-1"
   },
   {
     id: "quuts-app",
     title: "Quuts App",
     category: "Content & Social Community",
+    categoryType: "ui-ux",
     year: "2024",
     image: "https://static.wixstatic.com/media/581991_4069eb9fd2ff4cb19a942246db0bbbb5~mv2.png",
     description: "Micro-content discovery app focused on quote typography, daily reflections, audio snippets, and community sharing.",
-    tags: ["Mobile App", "Social", "Typography", "Interaction Design"]
+    tags: ["Mobile App", "Social", "Typography", "Interaction Design"],
+    liveUrl: "https://www.figma.com/design/J7h29yN9lz6h4LfQrk18KE/QUUTS-Chatting-App?node-id=0-1&t=TiOayCmdYPL1CZje-1"
   },
+
+  // ── Website Design Projects ──
   {
     id: "property-website",
     title: "Property Website",
     category: "Real Estate Marketplace",
+    categoryType: "website",
     year: "2024",
     image: "https://static.wixstatic.com/media/581991_9b75f243b27d465ebce5701c83910525~mv2.png",
     description: "Curated luxury real estate platform designed for buying, renting, and investing in prime metropolitan locations with virtual walkthroughs.",
-    tags: ["Web Design", "Real Estate", "Responsive", "UI/UX"]
+    tags: ["Web Design", "Real Estate", "Responsive", "UI/UX"],
+    liveUrl: "https://www.homewala.com/"
+  },
+  {
+    id: "furniture-website",
+    title: "Furniture Modern Store",
+    category: "Interior & E-Commerce Web",
+    categoryType: "website",
+    year: "2024",
+    image: "https://static.wixstatic.com/media/581991_0459d753f8c942fb962ea71c31ba13e2~mv2.png",
+    description: "Minimalist Scandinavian furniture showcase with 3D product previews, fabric customizers, and high-conversion checkout flows.",
+    tags: ["Web Design", "E-Commerce", "Interior", "Figma"],
+    liveUrl: "https://www.figma.com/design/w8Dx4PLie8Ux3eBW8IjqYo/Furniture-website?node-id=0-1&t=0d7y0keqXsRNJ04d-1"
+  },
+  {
+    id: "goshala-website",
+    title: "Goshala Community Portal",
+    category: "Non-Profit & Community Platform",
+    categoryType: "website",
+    year: "2024",
+    image: "https://static.wixstatic.com/media/581991_5164bec886a54560a6cdbbdaa0e09e84~mv2.png",
+    description: "Community-driven portal with donation flows, volunteer scheduling, transparency financial logs, and cow sponsorship tiers.",
+    tags: ["Web Platform", "Non-Profit", "UI/UX", "Responsive"],
+    liveUrl: "https://www.figma.com/design/In88drfsewsnJ7uMzqJmPi/Goshala-website?node-id=0-1&t=BSUJ9J3A6B8QHQ4Q-1"
+  },
+  {
+    id: "mymediater",
+    title: "Mymediater Platform",
+    category: "Mediation & Legal Tech",
+    categoryType: "website",
+    year: "2024",
+    image: "https://static.wixstatic.com/media/581991_06e78859015f48bfa5d92c330c679f20~mv2.png",
+    description: "Dispute resolution and online mediation platform with confidential case rooms, interactive milestone trackers, and document review.",
+    tags: ["Legal Tech", "Web Platform", "UI/UX", "Product Design"],
+    liveUrl: "https://www.figma.com/design/g4xf4qrryocFnDvCrVigxu/mymediator?node-id=0-1&t=SIH46NbNnfl71fcv-1"
+  },
+
+  // ── Graphic Design Projects (Accessible in grid & popup) ──
+  {
+    id: "party-poster",
+    title: "Amrithaa Party Poster",
+    category: "Event & Visual Graphics",
+    categoryType: "graphic",
+    year: "2024",
+    image: "https://static.wixstatic.com/media/581991_380b19259f54448d9ee4afbba61b637f~mv2.png",
+    description: "Dynamic typographic party poster design blending vibrant neon gradients, custom character vectors, and high-impact hierarchy.",
+    tags: ["Graphic Design", "Photoshop", "Typography", "Poster Design"],
+    liveUrl: "https://static.wixstatic.com/media/581991_380b19259f54448d9ee4afbba61b637f~mv2.png"
+  },
+  {
+    id: "app-poster",
+    title: "App Promotional Poster",
+    category: "Marketing & Advertising Design",
+    categoryType: "graphic",
+    year: "2024",
+    image: "https://static.wixstatic.com/media/581991_67e16292934f497e9a023d4d1a7f0e99~mv2.png",
+    description: "Clean promotional print and digital advertisement poster communicating core mobile application features and launch offers.",
+    tags: ["Graphic Design", "Illustrator", "Marketing", "Print"],
+    liveUrl: "https://static.wixstatic.com/media/581991_67e16292934f497e9a023d4d1a7f0e99~mv2.png"
+  },
+  {
+    id: "brand-identity",
+    title: "Brand Identity & Logo Suite",
+    category: "Branding & Stationery",
+    categoryType: "graphic",
+    year: "2024",
+    image: "https://static.wixstatic.com/media/581991_c070f233ed51470ebb6f5c903454dfcc~mv2.png",
+    description: "Complete corporate brand mark identity including levitating envelope mockups, stationery design, letterheads, and palette guidelines.",
+    tags: ["Branding", "Logo Design", "Stationery", "Illustrator"],
+    liveUrl: "https://static.wixstatic.com/media/581991_c070f233ed51470ebb6f5c903454dfcc~mv2.png"
+  },
+  {
+    id: "creative-billboard",
+    title: "Exhibition Poster Mockup",
+    category: "Outdoor Advertising",
+    categoryType: "graphic",
+    year: "2024",
+    image: "https://static.wixstatic.com/media/581991_83e93110d8924c9f93d3493d42df51ad~mv2.png",
+    description: "Realistic environmental poster display mockup featuring high-contrast geometric layout for public exhibitions and galleries.",
+    tags: ["Poster Mockup", "Outdoor", "Graphic Design", "Branding"],
+    liveUrl: "https://static.wixstatic.com/media/581991_83e93110d8924c9f93d3493d42df51ad~mv2.png"
+  }
+];
+
+// Rich Graphic Design Gallery specifically showcased in the animated popup
+export const GRAPHIC_DESIGN_WORKS = [
+  {
+    id: "g1",
+    title: "Amrithaa Party Poster",
+    subtitle: "Celebration & Event Branding",
+    image: "https://static.wixstatic.com/media/581991_380b19259f54448d9ee4afbba61b637f~mv2.png",
+    client: "Amrithaa Private Ltd",
+    tools: ["Adobe Photoshop", "Adobe Illustrator"],
+    year: "2024",
+    description: "High-energy festival celebration poster designed with custom 3D typography, neon accents, and balanced hierarchy for social and print distribution.",
+    dimensions: "1080 × 1350 px (Instagram) & A3 Print Ready"
+  },
+  {
+    id: "g2",
+    title: "App Promotional Launch Poster",
+    subtitle: "Digital Marketing Campaign",
+    image: "https://static.wixstatic.com/media/581991_67e16292934f497e9a023d4d1a7f0e99~mv2.png",
+    client: "App Launch Campaign",
+    tools: ["Adobe Illustrator", "Photoshop"],
+    year: "2024",
+    description: "Editorial advertising collateral designed to drive conversions during product release phases, highlighting core value propositions and QR download access.",
+    dimensions: "Print Collateral & Social Media Kit"
+  },
+  {
+    id: "g3",
+    title: "Brand Identity & Logo Mockup",
+    subtitle: "Corporate Stationery & Envelopes",
+    image: "https://static.wixstatic.com/media/581991_c070f233ed51470ebb6f5c903454dfcc~mv2.png",
+    client: "Corporate Identity Suite",
+    tools: ["Adobe Illustrator", "Photoshop 3D"],
+    year: "2024",
+    description: "Photorealistic levitating envelope presentation with foil-stamped logomarks, matching business cards, letterheads, and brand guidelines.",
+    dimensions: "Full Stationery Mockup Suite"
+  },
+  {
+    id: "g4",
+    title: "Gallery Exhibition Poster Mockup",
+    subtitle: "Outdoor & Architectural Display",
+    image: "https://static.wixstatic.com/media/581991_83e93110d8924c9f93d3493d42df51ad~mv2.png",
+    client: "Visual Arts Showcase",
+    tools: ["Photoshop Mockup Studio"],
+    year: "2024",
+    description: "Urban billboard and indoor wall poster mockup illustrating realistic lighting, shadows, and architectural environmental context.",
+    dimensions: "Large Format Outdoor & Indoor Display"
   }
 ];
 

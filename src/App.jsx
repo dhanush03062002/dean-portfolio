@@ -39,7 +39,7 @@ function AppInner() {
         <Route
           path="/"
           element={
-            <div className="min-h-screen bg-white text-black font-sans selection:bg-black selection:text-white">
+            <div className="min-h-screen bg-white text-black dark:bg-neutral-950 dark:text-neutral-100 font-sans selection:bg-black selection:text-white dark:selection:bg-white dark:selection:text-black">
               <Navbar onOpenContact={handleOpenContact} />
               <main>
                 <Hero onOpenContact={handleOpenContact} />
@@ -60,7 +60,7 @@ function AppInner() {
         <Route
           path="/projects"
           element={
-            <div className="min-h-screen bg-white text-black font-sans selection:bg-black selection:text-white">
+            <div className="min-h-screen bg-white text-black dark:bg-neutral-950 dark:text-neutral-100 font-sans selection:bg-black selection:text-white dark:selection:bg-white dark:selection:text-black">
               <Navbar onOpenContact={handleOpenContact} />
               <main>
                 <ProjectsPage onOpenContact={handleOpenContact} />
@@ -74,7 +74,7 @@ function AppInner() {
         <Route
           path="/projects/:id"
           element={
-            <div className="min-h-screen bg-white text-black font-sans selection:bg-black selection:text-white">
+            <div className="min-h-screen bg-white text-black dark:bg-neutral-950 dark:text-neutral-100 font-sans selection:bg-black selection:text-white dark:selection:bg-white dark:selection:text-black">
               <Navbar onOpenContact={handleOpenContact} />
               <main>
                 <ProjectDetailWrapper onOpenContact={handleOpenContact} />

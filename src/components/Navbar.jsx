@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, ArrowUpRight, Moon, Sun } from 'lucide-react';
+import { Menu, X, ArrowUpRight, Moon, Sun, Download } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { SOCIAL_LINKS, PROFILE } from '../assets/constants';
 
@@ -82,10 +82,28 @@ function SocialIcon({ name, url }) {
 
 export default function Navbar({ onOpenContact }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [isDark, setIsDark] = useState(false);
+  const [isDark, setIsDark] = useState(() => {
+    if (typeof window !== 'undefined') {
+      const saved = localStorage.getItem('theme');
+      if (saved) return saved === 'dark';
+      return document.documentElement.classList.contains('dark') ||
+             window.matchMedia('(prefers-color-scheme: dark)').matches;
+    }
+    return false;
+  });
+
+  useEffect(() => {
+    if (isDark) {
+      document.documentElement.classList.add('dark');
+      localStorage.setItem('theme', 'dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+      localStorage.setItem('theme', 'light');
+    }
+  }, [isDark]);
 
   const toggleTheme = () => {
-    setIsDark(!isDark);
+    setIsDark(prev => !prev);
   };
 
   return (
@@ -95,16 +113,17 @@ export default function Navbar({ onOpenContact }) {
         {/* ================= LEFT SECTION (Button & Socials & Projects) ================= */}
         <div className="hidden lg:flex items-center gap-4 flex-1 justify-start">
           
-          {/* Primary Action Button: "i Want to Chat" */}
-          <button
-            onClick={onOpenContact}
-            className="group relative flex items-center gap-3 px-4 sm:px-5 py-2.5 rounded-full bg-black text-white hover:bg-neutral-800 transition-all duration-300 shadow-sm cursor-pointer hover:scale-[1.02] active:scale-[0.98]"
+          {/* Primary Action Button: "Download Resume" */}
+          <a
+            href={PROFILE.resumeUrl || "/Dakshnamoorthy_Resume.pdf"}
+            download="Dakshnamoorthy_Resume.pdf"
+            className="group relative flex items-center gap-2.5 px-4 sm:px-5 py-2.5 rounded-full bg-black text-white hover:bg-neutral-800 transition-all duration-300 shadow-sm cursor-pointer hover:scale-[1.02] active:scale-[0.98]"
           >
-            <span className="font-sans text-sm font-medium tracking-tight">i Want to Chat</span>
+            <span className="font-sans text-sm font-medium tracking-tight">Download Resume</span>
             <div className="relative flex items-center justify-center w-5 h-5 rounded-full bg-neutral-800 border border-neutral-700">
-              <span className="w-2 h-2 rounded-full bg-cyan-400 group-hover:scale-125 transition-transform animate-pulse shadow-[0_0_8px_#02d4f5]"></span>
+              <Download size={12} className="text-cyan-400 group-hover:translate-y-0.5 transition-transform" />
             </div>
-          </button>
+          </a>
 
           {/* Social Icons row */}
           <div className="flex items-center gap-1.5 pl-1">
@@ -208,14 +227,25 @@ export default function Navbar({ onOpenContact }) {
 
         {/* ================= MOBILE CONTROLS ================= */}
         <div className="lg:hidden flex items-center gap-2">
-          {/* Mobile Chat Button */}
+          {/* Mobile Theme Toggle */}
           <button
-            onClick={onOpenContact}
-            className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-black text-white text-xs font-medium"
+            onClick={toggleTheme}
+            type="button"
+            aria-label="Toggle theme"
+            className="w-8 h-8 rounded-full border border-[rgba(224,224,224,0.8)] bg-neutral-100 flex items-center justify-center text-neutral-800"
           >
-            <span>Chat</span>
-            <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse"></span>
+            {isDark ? <Sun size={14} className="text-amber-500" /> : <Moon size={14} />}
           </button>
+
+          {/* Mobile Resume Button */}
+          <a
+            href={PROFILE.resumeUrl || "/Dakshnamoorthy_Resume.pdf"}
+            download="Dakshnamoorthy_Resume.pdf"
+            className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-black text-white text-xs font-medium"
+          >
+            <span>Resume</span>
+            <Download size={12} className="text-cyan-400" />
+          </a>
 
           {/* Hamburger Menu Button */}
           <button
@@ -259,16 +289,15 @@ export default function Navbar({ onOpenContact }) {
               ))}
               
               <div className="pt-4 flex flex-col gap-4">
-                <button
-                  onClick={() => {
-                    setMobileMenuOpen(false);
-                    onOpenContact();
-                  }}
-                  className="w-full py-3.5 rounded-full bg-black text-white font-medium flex items-center justify-center gap-2 shadow-md"
+                <a
+                  href={PROFILE.resumeUrl || "/Dakshnamoorthy_Resume.pdf"}
+                  download="Dakshnamoorthy_Resume.pdf"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="w-full py-3.5 rounded-full bg-black text-white font-medium flex items-center justify-center gap-2 shadow-md cursor-pointer"
                 >
-                  <span>i Want to Chat</span>
-                  <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
-                </button>
+                  <span>Download Resume</span>
+                  <Download size={14} className="text-cyan-400" />
+                </a>
 
                 <div className="flex items-center justify-center gap-2 pt-2">
                   {SOCIAL_LINKS.map((s) => (

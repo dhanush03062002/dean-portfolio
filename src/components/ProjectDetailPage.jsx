@@ -168,6 +168,46 @@ const PROJECT_DETAILS = {
       'https://static.wixstatic.com/media/581991_0459d753f8c942fb962ea71c31ba13e2~mv2.png',
     ],
   },
+  'furniture-website': {
+    client: 'Nordic Interior Living',
+    year: '2024',
+    duration: '5 weeks',
+    services: ['Web Design', 'E-Commerce', '3D Showroom'],
+    overview:
+      'Modern Scandinavian furniture brand flagship e-commerce experience designed for interior enthusiasts, featuring clean minimalist typography, tactile product zooms, and room visualizers.',
+    challenge:
+      'Furniture shoppers struggle to evaluate texture, size, and proportions on standard flat e-commerce screens.',
+    solution:
+      'Designed high-fidelity full-screen showcases, contextual room view angles, material selection toggles, and seamless one-step checkout flows.',
+    result:
+      'Reduced checkout abandonment by 32% and increased average order value by 24% in the launch campaign.',
+    color: '#1c1917',
+    tags: ['E-Commerce', 'Web Design', 'Interior Living', 'Figma'],
+    additionalImages: [
+      'https://static.wixstatic.com/media/581991_0459d753f8c942fb962ea71c31ba13e2~mv2.png',
+      'https://static.wixstatic.com/media/581991_5164bec886a54560a6cdbbdaa0e09e84~mv2.png',
+    ],
+  },
+  'goshala-website': {
+    client: 'Goshala Welfare Trust',
+    year: '2024',
+    duration: '4 weeks',
+    services: ['Non-Profit Web Design', 'Donation UX', 'Community Portal'],
+    overview:
+      'A sanctuary and cow protection trust website built to connect donors, volunteers, and visitors with transparency reporting, daily feed sponsorship, and event registration.',
+    challenge:
+      'Donors required transparent proof of care and simple recurring contribution channels on mobile devices.',
+    solution:
+      'Designed an emotional, high-trust donation funnel with micro-sponsorship tiers, photo updates from the sanctuary, and immediate digital tax-exemption receipts.',
+    result:
+      'Monthly recurring sponsor contributions grew by 280% within the first two months of deployment.',
+    color: '#064e3b',
+    tags: ['Non-Profit', 'Web Platform', 'Community', 'Donation UX'],
+    additionalImages: [
+      'https://static.wixstatic.com/media/581991_5164bec886a54560a6cdbbdaa0e09e84~mv2.png',
+      'https://static.wixstatic.com/media/581991_3a189551d3fd49b895c8bdaa1857f95d~mv2.png',
+    ],
+  },
 };
 
 export default function ProjectDetailPage({ projectId, onOpenContact }) {
@@ -289,13 +329,15 @@ export default function ProjectDetailPage({ projectId, onOpenContact }) {
                 </ul>
               </div>
 
-              <button
-                onClick={onOpenContact}
+              <a
+                href={project.liveUrl || details?.liveUrl || 'https://www.figma.com'}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="group w-full flex items-center justify-center gap-3 px-6 py-3.5 rounded-full bg-black text-white font-medium text-sm hover:bg-neutral-800 transition-all shadow-md cursor-pointer hover:scale-[1.02]"
               >
-                <span>Request Similar Project</span>
-                <ArrowUpRight size={15} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-              </button>
+                <span>View Live</span>
+                <ArrowUpRight size={15} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform text-cyan-400" />
+              </a>
             </div>
 
             {/* Right: Overview + Challenge + Solution (2 col span) */}
