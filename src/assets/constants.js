@@ -243,6 +243,123 @@ export const STATS = [
   { value: "4+", label: "Design Certifications" }
 ];
 
+export const TECH_SKILLS = [
+  // ── Design Tools ──
+  {
+    name: "Figma",
+    icon: "https://framerusercontent.com/images/PhCo5zQuRG2TMfsJDGW6EwnbphM.png?width=185&height=185",
+    category: "Design",
+    level: "expert"
+  },
+  {
+    name: "Adobe XD",
+    icon: "https://static.wixstatic.com/media/581991_cd275506fdf54476b154a59cbe73da79~mv2.png",
+    category: "Design",
+    level: "expert"
+  },
+  {
+    name: "Photoshop",
+    icon: "https://static.wixstatic.com/media/581991_91e7ff798e7a4a7c8c63afd7287ffab9~mv2.png",
+    category: "Design",
+    level: "expert"
+  },
+  {
+    name: "Illustrator",
+    icon: "https://static.wixstatic.com/media/581991_4464bcb4a19642a8a708622023ca58b9~mv2.png",
+    category: "Design",
+    level: "expert"
+  },
+  // ── Frontend ──
+  {
+    name: "HTML5",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
+    category: "Frontend",
+    level: "proficient"
+  },
+  {
+    name: "CSS3",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
+    category: "Frontend",
+    level: "proficient"
+  },
+  {
+    name: "JavaScript",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
+    category: "Frontend",
+    level: "proficient"
+  },
+  {
+    name: "React.js",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
+    category: "Frontend",
+    level: "learning"
+  },
+  {
+    name: "Tailwind CSS",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg",
+    category: "Frontend",
+    level: "proficient"
+  },
+  // ── Programming ──
+  {
+    name: "Java",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg",
+    category: "Programming",
+    level: "proficient"
+  },
+  {
+    name: "C (Basic)",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg",
+    category: "Programming",
+    level: "learning"
+  },
+  // ── Database ──
+  {
+    name: "MySQL",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg",
+    category: "Database",
+    level: "proficient"
+  },
+  {
+    name: "SQL",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg",
+    category: "Database",
+    level: "proficient"
+  },
+  {
+    name: "MongoDB",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg",
+    category: "Database",
+    level: "learning"
+  },
+  // ── Concepts ──
+  {
+    name: "Data Structures",
+    icon: "🧩",
+    category: "Concepts",
+    level: "proficient"
+  },
+  {
+    name: "OOP",
+    icon: "⚙️",
+    category: "Concepts",
+    level: "proficient"
+  },
+  {
+    name: "DBMS",
+    icon: "🗄️",
+    category: "Concepts",
+    level: "proficient"
+  },
+  // ── Tools ──
+  {
+    name: "Git & GitHub",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg",
+    category: "Tools",
+    level: "proficient"
+  },
+];
+
 export const STACK = [
   {
     name: "Figma",

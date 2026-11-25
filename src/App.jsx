@@ -8,6 +8,7 @@ import Hero from './components/Hero';
 import Projects from './components/Projects';
 import ProjectCorridor from './components/ProjectCorridor';
 import AboutSection from './components/AboutSection';
+import TechSkills from './components/TechSkills';
 import Services from './components/Services';
 import ProcessStickyScroll from './components/ProcessStickyScroll';
 import BottomExperience from './components/BottomExperience';
@@ -45,6 +46,7 @@ function AppInner() {
                 <Hero onOpenContact={handleOpenContact} />
                 <Projects />
                 <AboutSection />
+                <TechSkills />
                 <ProjectCorridor />
                 <Services onOpenContact={handleOpenContact} />
                 <ProcessStickyScroll onOpenContact={handleOpenContact} />
