@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+  <!-- Home Page -->
+  <url>
+    <loc>https://dhanush03062002.github.io/dean-portfolio/</loc>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://static.wixstatic.com/media/581991_9854fcb8ae3b4707acfabb78b2a9de74~mv2.png</image:loc>
+      <image:caption>Dakshnamoorthy — UI/UX Designer Portfolio Home</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Projects Listing Page -->
+  <url>
+    <loc>https://dhanush03062002.github.io/dean-portfolio/projects</loc>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Individual Project Pages -->
+  <url>
+    <loc>https://dhanush03062002.github.io/dean-portfolio/projects/factory-energy</loc>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://static.wixstatic.com/media/581991_244ac4c2707a4db19f97a12ac0c4c489~mv2.png</image:loc>
+      <image:caption>Factory Energy Monitoring — IoT Dashboard UI/UX Design</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://dhanush03062002.github.io/dean-portfolio/projects/ai-business</loc>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://static.wixstatic.com/media/581991_3a189551d3fd49b895c8bdaa1857f95d~mv2.png</image:loc>
+      <image:caption>AI Business Development — Enterprise SaaS Dashboard Design</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://dhanush03062002.github.io/dean-portfolio/projects/make-shift</loc>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://static.wixstatic.com/media/581991_ee2aeebfadb848239fd35ca589f1f573~mv2.png</image:loc>
+      <image:caption>Make Shift — On-Demand Service Booking Mobile App Design</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://dhanush03062002.github.io/dean-portfolio/projects/bookmywage</loc>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://static.wixstatic.com/media/581991_6e7f546103414833a05096a3a9784c33~mv2.png</image:loc>
+      <image:caption>Bookmywage — Fintech Mobile App UI/UX Design</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://dhanush03062002.github.io/dean-portfolio/projects/doctor-appointment</loc>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://static.wixstatic.com/media/581991_cd3ac05df3fc4ca0852142be490b92a5~mv2.png</image:loc>
+      <image:caption>Doctor Appointment App — Healthcare UX Design</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://dhanush03062002.github.io/dean-portfolio/projects/mymediater</loc>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://dhanush03062002.github.io/dean-portfolio/projects/furniture-website</loc>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://dhanush03062002.github.io/dean-portfolio/projects/goshala-website</loc>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+</urlset>

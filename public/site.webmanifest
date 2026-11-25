@@ -1,0 +1,20 @@
+{
+  "name": "Dakshnamoorthy — UI/UX Designer Portfolio",
+  "short_name": "Daksh Portfolio",
+  "description": "UI/UX Designer & Graphic Designer based in Chennai. 20+ projects across mobile apps, dashboards, and brand identities.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#000000",
+  "orientation": "portrait-primary",
+  "lang": "en-IN",
+  "categories": ["portfolio", "design", "productivity"],
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

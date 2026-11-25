@@ -1,0 +1,13 @@
+User-agent: *
+Allow: /
+
+# Block build artifacts
+Disallow: /dist/
+Disallow: /node_modules/
+Disallow: /.git/
+
+# Sitemap location
+Sitemap: https://dhanush03062002.github.io/dean-portfolio/sitemap.xml
+
+# Crawl-delay (optional, polite crawling)
+Crawl-delay: 1
