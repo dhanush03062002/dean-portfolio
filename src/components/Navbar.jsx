@@ -8,17 +8,21 @@ import SocialIcon from './SocialIcon';
 // Framer mechanical letter-by-letter rolling animation
 function LetterRoll({ text, active = false }) {
   return (
-    <span className="inline-flex font-display text-[17px] font-bold tracking-tight uppercase select-none overflow-hidden h-[22px] cursor-pointer">
+    <span className="inline-flex items-start font-display text-[17px] font-bold tracking-tight uppercase select-none overflow-hidden h-[22px] leading-[22px] cursor-pointer">
       {text.split('').map((char, i) => (
-        <span 
-          key={i} 
-          className="relative inline-flex flex-col transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:-translate-y-1/2"
+        <span
+          key={i}
+          className="relative inline-flex flex-col h-[44px] shrink-0 transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:-translate-y-1/2"
           style={{ transitionDelay: `${i * 18}ms` }}
         >
-          <span className={`${active ? 'text-black font-extrabold' : 'text-neutral-500'} group-hover:text-black leading-[22px] transition-colors`}>
+          <span
+            className={`block h-[22px] leading-[22px] ${
+              active ? 'text-black font-extrabold' : 'text-neutral-500'
+            } group-hover:text-black transition-colors`}
+          >
             {char === ' ' ? '\u00A0' : char}
           </span>
-          <span className="text-black font-extrabold leading-[22px]">
+          <span className="block h-[22px] leading-[22px] text-black font-extrabold">
             {char === ' ' ? '\u00A0' : char}
           </span>
         </span>

@@ -363,22 +363,6 @@ export default function ProjectDetailPage({ projectId, onOpenContact }) {
                   <p className="font-sans text-base text-neutral-700 leading-relaxed">{details.solution}</p>
                 </div>
               )}
-
-              {details?.result && (
-                <div
-                  className="p-6 rounded-2xl border border-[rgba(224,224,224,0.8)]"
-                  style={{ background: details.color || '#f9f9f9' }}
-                >
-                  <p className="text-xs font-bold uppercase tracking-widest mb-3"
-                    style={{ color: details.color === '#0a0a0a' || details.color === '#111111' ? '#888' : '#999' }}>
-                    Result
-                  </p>
-                  <p className="font-sans text-base font-medium leading-relaxed"
-                    style={{ color: details.color === '#0a0a0a' || details.color === '#111111' ? '#fff' : '#1a1a1a' }}>
-                    {details.result}
-                  </p>
-                </div>
-              )}
             </div>
 
           </div>
