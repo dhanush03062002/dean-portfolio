@@ -5,6 +5,14 @@ import { SERVICES } from '../assets/constants';
 import CornerCross from './CornerCross';
 import TextReveal from './TextReveal';
 
+const SERVICE_ROLES = [
+  'UI/UX DESIGN',
+  'GRAPHIC DESIGN',
+  'WEBSITE DEVELOPMENT',
+  'APP DESIGN',
+  'VIDEO EDITING',
+];
+
 export default function Services({ onOpenContact }) {
   const [openIndex, setOpenIndex] = useState(0);
 
@@ -12,15 +20,12 @@ export default function Services({ onOpenContact }) {
     <section id="services" className="relative border-b border-[rgba(224,224,224,0.63)] bg-white overflow-hidden">
       
       {/* Services Infinite Marquee Ticker */}
-      <div className="w-full border-b border-[rgba(224,224,224,0.63)] py-3 bg-neutral-50 overflow-hidden select-none">
+      <div className="w-full border-b border-[rgba(224,224,224,0.63)] py-3.5 bg-neutral-50 overflow-hidden select-none">
         <div className="flex w-max whitespace-nowrap animate-marquee">
-          {[...Array(10)].map((_, i) => (
+          {[...SERVICE_ROLES, ...SERVICE_ROLES, ...SERVICE_ROLES, ...SERVICE_ROLES].map((role, i) => (
             <div key={i} className="flex items-center gap-6 mx-6">
               <span className="font-display text-2xl sm:text-3xl font-extrabold uppercase tracking-tight text-neutral-900">
-                SERVICES
-              </span>
-              <span className="text-sm font-semibold uppercase tracking-wider text-neutral-400">
-                what i offer
+                {role}
               </span>
               <span className="text-neutral-300">★</span>
             </div>
