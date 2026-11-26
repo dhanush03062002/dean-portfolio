@@ -36,6 +36,9 @@ export default function TubesCursor({
         if (!mounted || !canvasRef.current) return;
 
         const app = createTubesCursor(canvasRef.current, {
+          // Disable post-processing bloom so the WebGL canvas keeps alpha: true
+          // transparency instead of painting an opaque black background over the page.
+          bloom: false,
           tubes: {
             colors,
             lights: {
@@ -45,6 +48,7 @@ export default function TubesCursor({
           },
         });
 
+        app.three?.renderer?.setClearAlpha?.(0);
         tubesRef.current = app;
       } catch (error) {
         console.error('Failed to load TubesCursor:', error);
