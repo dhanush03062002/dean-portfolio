@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowUpRight, ArrowLeft, ExternalLink, Sparkles, Eye, Download } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { PROJECTS, PROFILE } from '../assets/constants';
+import { PROJECTS, PROFILE, triggerResumeDownload } from '../assets/constants';
 import CornerCross from '../components/CornerCross';
 import TextReveal from '../components/TextReveal';
 import GraphicDesignModal from '../components/GraphicDesignModal';
@@ -306,8 +306,10 @@ export default function ProjectsPage({ onOpenContact }) {
             Let's design something exceptional together. From concept to launch, I'll help you create intuitive user experiences that convert.
           </p>
           <a
-            href={PROFILE.resumeUrl || "/Dakshnamoorthy_Resume.pdf"}
-            download="Dakshnamoorthy_Resume.pdf"
+            href={PROFILE.resumeUrl || "/Dhakashnamoorthy_Designer.pdf"}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={triggerResumeDownload}
             className="group inline-flex items-center gap-3 px-8 py-4 rounded-full bg-black text-white font-medium hover:bg-neutral-800 transition-all duration-300 shadow-lg cursor-pointer hover:scale-[1.02]"
           >
             <span>Download Resume</span>

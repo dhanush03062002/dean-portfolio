@@ -13,8 +13,18 @@ export const PROFILE = {
   currentCompany: "Amrithaa Private Ltd",
   experienceYears: "2+ Years",
   completedProjects: "20+ Projects",
-  resumeUrl: "/Dakshnamoorthy_Resume.pdf"
+  resumeUrl: "/Dhakashnamoorthy_Designer.pdf"
 };
+
+export function triggerResumeDownload() {
+  const url = PROFILE.resumeUrl || "/Dhakashnamoorthy_Designer.pdf";
+  const link = document.createElement("a");
+  link.href = url;
+  link.download = "Dhakashnamoorthy_Designer.pdf";
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+}
 
 export const SOCIAL_LINKS = [
   { name: "LinkedIn", url: "https://www.linkedin.com/in/dhakashnamoorthy", icon: "linkedin" },

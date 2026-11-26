@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
 import { ArrowUpRight, Download } from 'lucide-react';
-import { PROFILE } from '../assets/constants';
+import { PROFILE, triggerResumeDownload } from '../assets/constants';
 import CornerCross from './CornerCross';
 import TextReveal from './TextReveal';
 import Antigravity from './Antigravity';
@@ -168,8 +168,10 @@ export default function Hero({ onOpenContact }) {
           >
             {/* Primary CTA Button: "Download Resume" */}
             <a
-              href={PROFILE.resumeUrl || "/Dakshnamoorthy_Resume.pdf"}
-              download="Dakshnamoorthy_Resume.pdf"
+              href={PROFILE.resumeUrl || "/Dhakashnamoorthy_Designer.pdf"}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={triggerResumeDownload}
               className="w-full sm:w-auto group flex items-center justify-center gap-3 px-6 sm:px-7 py-3 sm:py-3.5 rounded-full bg-black text-white hover:bg-neutral-800 transition-all duration-300 shadow-md hover:shadow-lg cursor-pointer hover:scale-[1.02] active:scale-[0.98]"
             >
               <span className="font-sans text-sm sm:text-base font-medium">Download Resume</span>

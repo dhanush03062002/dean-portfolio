@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, ArrowUpRight, Moon, Sun, Download } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { SOCIAL_LINKS, PROFILE } from '../assets/constants';
+import { SOCIAL_LINKS, PROFILE, triggerResumeDownload } from '../assets/constants';
 
 // Framer mechanical letter-by-letter rolling animation
 function LetterRoll({ text, active = false }) {
@@ -115,8 +115,10 @@ export default function Navbar({ onOpenContact }) {
           
           {/* Primary Action Button: "Download Resume" */}
           <a
-            href={PROFILE.resumeUrl || "/Dakshnamoorthy_Resume.pdf"}
-            download="Dakshnamoorthy_Resume.pdf"
+            href={PROFILE.resumeUrl || "/Dhakashnamoorthy_Designer.pdf"}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={triggerResumeDownload}
             className="group relative flex items-center gap-2.5 px-4 sm:px-5 py-2.5 rounded-full bg-black text-white hover:bg-neutral-800 transition-all duration-300 shadow-sm cursor-pointer hover:scale-[1.02] active:scale-[0.98]"
           >
             <span className="font-sans text-sm font-medium tracking-tight">Download Resume</span>
@@ -239,8 +241,10 @@ export default function Navbar({ onOpenContact }) {
 
           {/* Mobile Resume Button */}
           <a
-            href={PROFILE.resumeUrl || "/Dakshnamoorthy_Resume.pdf"}
-            download="Dakshnamoorthy_Resume.pdf"
+            href={PROFILE.resumeUrl || "/Dhakashnamoorthy_Designer.pdf"}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={triggerResumeDownload}
             className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-black text-white text-xs font-medium"
           >
             <span>Resume</span>
@@ -290,9 +294,13 @@ export default function Navbar({ onOpenContact }) {
               
               <div className="pt-4 flex flex-col gap-4">
                 <a
-                  href={PROFILE.resumeUrl || "/Dakshnamoorthy_Resume.pdf"}
-                  download="Dakshnamoorthy_Resume.pdf"
-                  onClick={() => setMobileMenuOpen(false)}
+                  href={PROFILE.resumeUrl || "/Dhakashnamoorthy_Designer.pdf"}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => {
+                    triggerResumeDownload();
+                    setMobileMenuOpen(false);
+                  }}
                   className="w-full py-3.5 rounded-full bg-black text-white font-medium flex items-center justify-center gap-2 shadow-md cursor-pointer"
                 >
                   <span>Download Resume</span>
