@@ -1,16 +1,30 @@
 import React, { useRef, useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { Boxes, Database, Network } from "lucide-react";
+import { Code2, Layers, Layout, Palette, PenTool, Sparkles, Wand2 } from "lucide-react";
 import { TECH_SKILLS } from "../assets/constants";
 import CornerCross from "./CornerCross";
 import TextReveal from "./TextReveal";
 import TiltCard from "./TiltCard";
 
-function ConceptIcon({ name }) {
-  const key = name.toLowerCase();
-  if (key.includes("data")) return <Network size={18} className="text-neutral-700 dark:text-neutral-200" />;
-  if (key.includes("oop")) return <Boxes size={18} className="text-neutral-700 dark:text-neutral-200" />;
-  return <Database size={18} className="text-neutral-700 dark:text-neutral-200" />;
+function ConceptIcon({ icon }) {
+  const cls = "text-neutral-800 dark:text-neutral-100";
+  switch (icon) {
+    case "icon:uiux":
+      return <Layout size={18} className={cls} />;
+    case "icon:wireframe":
+      return <PenTool size={18} className={cls} />;
+    case "icon:systems":
+      return <Layers size={18} className={cls} />;
+    case "icon:graphic":
+      return <Palette size={18} className={cls} />;
+    case "icon:brand":
+      return <Sparkles size={18} className={cls} />;
+    case "icon:ai":
+      return <Wand2 size={18} className={cls} />;
+    case "icon:vibecode":
+    default:
+      return <Code2 size={18} className={cls} />;
+  }
 }
 
 function SkillCard({ skill }) {
@@ -30,7 +44,7 @@ function SkillCard({ skill }) {
             decoding="async"
           />
         ) : (
-          <ConceptIcon name={skill.name} />
+          <ConceptIcon icon={skill.icon} />
         )}
       </div>
 
@@ -141,7 +155,7 @@ export default function TechSkills() {
           </div>
 
           <p className="font-sans text-sm text-neutral-500 max-w-sm leading-relaxed">
-            Design tools, frontend technologies, and core engineering fundamentals I use to craft scalable digital products.
+            UI/UX design, graphic design, web fundamentals, and AI-powered creative workflows I use to craft digital products.
           </p>
         </motion.div>
 
