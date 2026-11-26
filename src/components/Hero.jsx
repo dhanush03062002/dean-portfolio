@@ -23,6 +23,8 @@ export default function Hero({ onOpenContact }) {
   // Parallax letter displacement on scroll
   const xLeft = useTransform(smoothProgress, [0, 1], ["0%", "-6%"]);
   const xRight = useTransform(smoothProgress, [0, 1], ["0%", "6%"]);
+  const avatarScale = useTransform(smoothProgress, [0, 1], [1, 0.94]);
+  const avatarY = useTransform(smoothProgress, [0, 1], ["0px", "16px"]);
 
   // Staggered words for blur-in animation
   const bioWords = PROFILE.bio.split(' ');
@@ -85,7 +87,7 @@ export default function Hero({ onOpenContact }) {
           </motion.div>
 
           {/* Monumental Headline Row (GRAPHICS + Portrait Cutout Card + DESIGNER) */}
-          <div className="w-full flex flex-col md:flex-row items-center justify-center gap-2 sm:gap-5 lg:gap-8 my-2 select-none overflow-hidden relative z-10">
+          <div className="w-full flex flex-col md:flex-row items-center md:items-end justify-center gap-2 sm:gap-4 lg:gap-6 my-2 select-none overflow-hidden relative z-10">
             
             {/* Left word: UI / UX */}
             <motion.h1 
@@ -97,6 +99,38 @@ export default function Hero({ onOpenContact }) {
             >
               UI / UX
             </motion.h1>
+
+            {/* Center Portrait Card (Responsive 100px-122px) */}
+            <motion.div 
+              style={{ scale: avatarScale, y: avatarY }}
+              initial={{ opacity: 0, scale: 0.85 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+              whileHover={{ scale: 1.05 }}
+              className="relative w-[96px] h-[118px] sm:w-[115px] sm:h-[138px] md:w-[122px] md:h-[147px] rounded-[24px] sm:rounded-[30px] border border-[rgba(224,224,224,0.8)] shadow-md overflow-hidden bg-gradient-to-b from-neutral-100 to-neutral-200 flex-shrink-0 cursor-pointer self-center md:self-end mb-2 md:mb-3 z-10 group"
+            >
+              {/* Dakshnamoorthy portrait image */}
+              <img 
+                src={PROFILE.avatar} 
+                alt="Dakshnamoorthy portrait" 
+                className="w-full h-full object-cover object-top scale-110 group-hover:scale-115 transition-transform duration-500"
+                fetchpriority="high"
+                decoding="async"
+              />
+
+              {/* Looping ambient video overlay matching Framer */}
+              <video 
+                src="https://framerusercontent.com/assets/EtFNVEIQDKsxeDVfagwYxBQgg.mp4" 
+                autoPlay
+                loop 
+                muted 
+                playsInline 
+                className="absolute inset-0 w-full h-full object-cover opacity-60 mix-blend-overlay pointer-events-none"
+              />
+
+              {/* Bottom gradient mask */}
+              <div className="absolute inset-x-0 bottom-0 h-10 bg-gradient-to-t from-black/20 to-transparent pointer-events-none"></div>
+            </motion.div>
 
             {/* Right word: DESIGNER */}
             <motion.h1 
