@@ -1,7 +1,6 @@
 import React, { useState, Suspense, lazy } from 'react';
 import { BrowserRouter, Routes, Route, useParams } from 'react-router-dom';
 import CustomCursor from './components/CustomCursor';
-import TubesCursor from './components/TubesCursor';
 import useLenis from './hooks/useLenis';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
@@ -133,8 +132,6 @@ function AppInner() {
 export default function App() {
   return (
     <BrowserRouter>
-      {/* 3D Neon Tubes mouse cursor effect */}
-      <TubesCursor />
       <CustomCursor />
       <AppInner />
     </BrowserRouter>
