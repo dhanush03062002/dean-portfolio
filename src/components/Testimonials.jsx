@@ -1,31 +1,8 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { TESTIMONIALS } from '../assets/constants';
 import TextReveal from './TextReveal';
-
-const TESTIMONIALS = [
-  {
-    id: 1,
-    name: "Sarah Mitchell",
-    role: "Founder of Bloom Studio",
-    quote: `"Best designer I've worked with! Fast, professional, and the website looks incredible. Highly recommend!"`,
-    avatar: "https://framerusercontent.com/images/Brmkbsvgw7oq52QXNYK8FUciR0.jpg?width=609&height=609"
-  },
-  {
-    id: 2,
-    name: "Emily Chen",
-    role: "Marketing Director at TechFlow",
-    quote: `"Our new website is stunning! Communication was great and the whole process was super smooth."`,
-    avatar: "https://framerusercontent.com/images/TVuMWmmbEpLT6DpR83YglHVWg.jpg?width=609&height=609"
-  },
-  {
-    id: 3,
-    name: "James Rodriguez",
-    role: "CEO of Urban Eats",
-    quote: `"Nailed our branding perfectly. Easy to work with and delivered exactly what we needed. Amazing!"`,
-    avatar: "https://framerusercontent.com/images/1F6blGIcuUbjh4UkQMyuZi9ufh4.jpg?width=609&height=609"
-  }
-];
 
 function StarIcon() {
   return (

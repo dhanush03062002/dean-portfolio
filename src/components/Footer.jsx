@@ -332,7 +332,7 @@ export default function Footer({ onOpenContact }) {
                     </svg>
                   </div>
                   <span className="font-display text-lg font-black uppercase tracking-tight text-white">
-                    Dean
+                    {PROFILE.name}
                   </span>
                 </Link>
               </div>

@@ -1,36 +1,14 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Plus } from 'lucide-react';
+import { FAQS } from '../assets/constants';
 import TextReveal from './TextReveal';
 
-const FAQS = [
-  {
-    id: 1,
-    question: "How long does a typical project take?",
-    answer: "Most websites take 2-4 weeks. Branding takes 1-2 weeks. Graphic design is done within days."
-  },
-  {
-    id: 2,
-    question: "How much do your services cost?",
-    answer: "Pricing varies by project scope. I offer packages to fit different budgets. Let's chat about your needs!"
-  },
-  {
-    id: 3,
-    question: "Do you offer revisions?",
-    answer: "Absolutely! All packages include revisions so we can refine everything until you're completely happy with it."
-  },
-  {
-    id: 4,
-    question: "What do I need to get started?",
-    answer: "Just your ideas and examples of designs you like. I'll guide you through the rest!"
-  }
-];
-
 export default function FAQ() {
-  const [openId, setOpenId] = useState(null);
+  const [openIndex, setOpenIndex] = useState(null);
 
-  const toggle = (id) => {
-    setOpenId((prev) => (prev === id ? null : id));
+  const toggle = (idx) => {
+    setOpenIndex((prev) => (prev === idx ? null : idx));
   };
 
   return (
@@ -49,14 +27,14 @@ export default function FAQ() {
 
       {/* ── Main FAQ Body with Framer #f2f2f2 background ── */}
       <div className="px-6 sm:px-10 py-12 sm:py-16 flex flex-col gap-5">
-        {FAQS.map((faq) => {
-          const isOpen = openId === faq.id;
+        {FAQS.map((faq, idx) => {
+          const isOpen = openIndex === idx;
 
           return (
-            <div key={faq.id} className="relative">
+            <div key={faq.question} className="relative">
               {/* Question & Toggle Button Row */}
               <div
-                onClick={() => toggle(faq.id)}
+                onClick={() => toggle(idx)}
                 className="flex items-center justify-between gap-3 cursor-pointer select-none"
               >
                 {/* Black Pill with Question */}

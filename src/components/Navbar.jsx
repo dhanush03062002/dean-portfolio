@@ -111,9 +111,9 @@ export default function Navbar({ onOpenContact }) {
 
         {/* ================= CENTER SECTION (Logo, Rotating Avatar & Active Pill) ================= */}
         <div className="flex items-center gap-3 justify-center">
-          <Link to="/#hero" className="flex items-center gap-2 group cursor-pointer" title="Dean Portfolio">
+          <Link to="/#hero" className="flex items-center gap-2 group cursor-pointer" title="Dakshnamoorthy Portfolio">
             
-            {/* Rotating Dotted Ring Badge with Dean Avatar */}
+            {/* Rotating Dotted Ring Badge with Dakshnamoorthy Avatar */}
             <div className="relative w-[52px] h-[52px] flex items-center justify-center flex-shrink-0">
               {/* Rotating outer dotted SVG track */}
               <motion.div 
@@ -167,7 +167,7 @@ export default function Navbar({ onOpenContact }) {
             <Link to="/#services" className="group px-1 py-1">
               <LetterRoll text="Services" />
             </Link>
-            <Link to="/#process-scroll" className="group px-1 py-1">
+            <Link to="/#process" className="group px-1 py-1">
               <LetterRoll text="Process" />
             </Link>
             <Link to="/#about" className="group px-1 py-1">
@@ -244,7 +244,7 @@ export default function Navbar({ onOpenContact }) {
                 { name: 'Home', href: '/#hero' },
                 { name: 'Projects', href: '/#projects' },
                 { name: 'Services', href: '/#services' },
-                { name: 'Process', href: '/#process-scroll' },
+                { name: 'Process', href: '/#process' },
                 { name: 'About', href: '/#about' }
               ].map((link) => (
                 <Link
