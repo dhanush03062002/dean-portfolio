@@ -27,11 +27,9 @@ export function triggerResumeDownload() {
 }
 
 export const SOCIAL_LINKS = [
-  { name: "LinkedIn", url: "https://www.linkedin.com/in/dhakashnamoorthy", icon: "linkedin" },
-  { name: "Dribbble", url: "https://dribbble.com", icon: "dribbble" },
-  { name: "Behance", url: "https://behance.net", icon: "behance" },
-  { name: "Instagram", url: "https://instagram.com", icon: "instagram" },
-  { name: "X", url: "https://x.com", icon: "x" }
+  { name: "LinkedIn", url: "https://www.linkedin.com/in/dakashnamoorthy-designer/", icon: "linkedin" },
+  { name: "Behance", url: "https://www.behance.net/dakshnags", icon: "behance" },
+  { name: "Email", url: "mailto:dhakashnamoorthy.03@gmail.com", icon: "email" }
 ];
 
 export const PROJECTS = [

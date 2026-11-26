@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, ArrowUpRight, Moon, Sun, Download } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { SOCIAL_LINKS, PROFILE, triggerResumeDownload } from '../assets/constants';
+import SocialIcon from './SocialIcon';
 
 // Framer mechanical letter-by-letter rolling animation
 function LetterRoll({ text, active = false }) {
@@ -26,47 +27,8 @@ function LetterRoll({ text, active = false }) {
   );
 }
 
-// Social Icon helper with precise SVG paths
-function SocialIcon({ name, url }) {
-  const getIcon = () => {
-    switch (name.toLowerCase()) {
-      case 'dribbble':
-        return (
-          <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm9.885 11.44c-2.585-.45-5.068-.31-7.22.36-.188-.415-.386-.83-.594-1.242 3.32-1.528 5.86-3.81 7.23-6.62 1.488 2.062 2.374 4.595 2.374 7.332 0 .057-.003.113-.005.17h.215zm-2.07-7.986c-1.22 2.62-3.565 4.745-6.677 6.184-1.19-2.316-2.587-4.502-4.14-6.47 2.05-.885 4.316-1.378 6.697-1.378 1.48 0 2.898.204 4.238.583l-.118.081zm-12.75 1.554c1.55 1.942 2.94 4.102 4.114 6.388-3.708 1.134-7.534 1.258-9.034 1.272.58-3.08 2.38-5.71 4.92-7.66zm-5.02 9.61c1.53-.01 4.96-.12 8.35-1.17.65 1.44 1.24 2.94 1.74 4.47-4.32 1.51-8.15 1.12-8.87 1.03-.78-1.28-1.22-2.79-1.22-4.33zm11.96 7.27c-.55-1.5-1.15-2.96-1.78-4.37 1.97-.6 4.22-.72 6.57-.31-.5 1.96-1.55 3.68-2.98 4.96-1.07.64-2.29 1.06-3.6 1.18l1.79-1.46zm5.2-3.23c-2.15-.37-4.22-.26-6.06.29-.46-1.08-.94-2.17-1.44-3.26 2.02-.63 4.33-.76 6.72-.34.34.42.64.87.9 1.34l-.12 1.97z"/>
-          </svg>
-        );
-      case 'x':
-        return (
-          <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-          </svg>
-        );
-      case 'instagram':
-        return (
-          <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-          </svg>
-        );
-      case 'linkedin':
-        return (
-          <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-          </svg>
-        );
-      case 'facebook':
-        return (
-          <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M9 8H6v4h3v12h5V12h3.642L18 8h-4V6.333C14 5.374 14.5 5 15.6 5H18V0h-3.808C10.597 0 9 1.583 9 4.615V8z"/>
-          </svg>
-        );
-      default:
-        return <span className="text-xs font-bold">{name[0]}</span>;
-    }
-  };
-
+// Social Icon button wrapper
+function NavbarSocialButton({ name, url }) {
   return (
     <a
       href={url}
@@ -75,7 +37,7 @@ function SocialIcon({ name, url }) {
       aria-label={name}
       className="w-7 h-7 sm:w-8 sm:h-8 rounded-full border border-[rgba(224,224,224,0.7)] flex items-center justify-center text-neutral-600 hover:text-black hover:border-black hover:scale-105 transition-all duration-200 bg-white shadow-2xs"
     >
-      {getIcon()}
+      <SocialIcon name={name} className="w-3.5 h-3.5" />
     </a>
   );
 }
@@ -130,7 +92,7 @@ export default function Navbar({ onOpenContact }) {
           {/* Social Icons row */}
           <div className="flex items-center gap-1.5 pl-1">
             {SOCIAL_LINKS.map((social) => (
-              <SocialIcon key={social.name} name={social.name} url={social.url} />
+              <NavbarSocialButton key={social.name} name={social.name} url={social.url} />
             ))}
           </div>
 
@@ -309,7 +271,7 @@ export default function Navbar({ onOpenContact }) {
 
                 <div className="flex items-center justify-center gap-2 pt-2">
                   {SOCIAL_LINKS.map((s) => (
-                    <SocialIcon key={s.name} name={s.name} url={s.url} />
+                    <NavbarSocialButton key={s.name} name={s.name} url={s.url} />
                   ))}
                 </div>
               </div>
