@@ -6,6 +6,7 @@ import { PROJECTS, PROFILE, triggerResumeDownload } from '../assets/constants';
 import CornerCross from '../components/CornerCross';
 import TextReveal from '../components/TextReveal';
 import GraphicDesignModal from '../components/GraphicDesignModal';
+import TiltCard from '../components/TiltCard';
 
 export default function ProjectsPage({ onOpenContact }) {
   const [activeCategory, setActiveCategory] = useState('all');
@@ -147,10 +148,11 @@ export default function ProjectsPage({ onOpenContact }) {
                   >
                     <div className="block w-full h-full p-5 sm:p-8 hover:bg-neutral-50/50 transition-colors duration-300 cursor-none">
                       
-                      {/* Image */}
-                      <div
+                      {/* Image with 3D Tilt + Glow */}
+                      <TiltCard
                         onClick={(e) => handleCardClick(e, project)}
-                        className="relative w-full overflow-hidden mb-5 cursor-pointer"
+                        scale={1.03}
+                        className="relative w-full overflow-hidden mb-5 cursor-pointer hover:shadow-2xl"
                         style={{
                           borderRadius: '30px',
                           aspectRatio: '4/3',
@@ -223,7 +225,7 @@ export default function ProjectsPage({ onOpenContact }) {
                             </Link>
                           )}
                         </div>
-                      </div>
+                      </TiltCard>
 
                       {/* Footer */}
                       <div className="flex items-center justify-between gap-3">

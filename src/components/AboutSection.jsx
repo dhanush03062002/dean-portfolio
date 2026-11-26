@@ -4,6 +4,7 @@ import { ArrowDownRight, Sparkles } from 'lucide-react';
 import { STACK } from '../assets/constants';
 import CornerCross from './CornerCross';
 import TextReveal from './TextReveal';
+import TiltCard from './TiltCard';
 
 export default function AboutSection() {
   const containerRef = useRef(null);
@@ -205,24 +206,27 @@ export default function AboutSection() {
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.4, delay: idx * 0.08 }}
-                    whileHover={{ y: -3 }}
-                    className="p-3.5 sm:p-4 rounded-2xl border border-[rgba(224,224,224,0.8)] bg-neutral-50/50 hover:bg-white hover:shadow-md transition-all duration-300 flex items-center gap-3.5 group cursor-pointer"
                   >
-                    {/* Tool Icon with 3D Float */}
-                    <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-white border border-neutral-200 p-2 shadow-sm flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
-                      <img src={tool.icon} alt={tool.name} className="w-full h-full object-contain" loading="lazy" decoding="async" />
-                    </div>
+                    <TiltCard
+                      scale={1.06}
+                      className="p-3.5 sm:p-4 rounded-2xl border border-[rgba(224,224,224,0.8)] bg-neutral-50/50 hover:bg-white hover:shadow-xl flex items-center gap-3.5 group cursor-pointer"
+                    >
+                      {/* Tool Icon with 3D Float */}
+                      <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-white border border-neutral-200 p-2 shadow-sm flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                        <img src={tool.icon} alt={tool.name} className="w-full h-full object-contain" loading="lazy" decoding="async" />
+                      </div>
 
-                    <div className="flex-1 min-w-0">
-                      <h5 className="font-display text-base sm:text-lg font-bold uppercase text-neutral-900 tracking-tight leading-none mb-1">
-                        {tool.name}
-                      </h5>
-                      <p className="text-xs text-neutral-500 font-medium truncate">
-                        {tool.role}
-                      </p>
-                    </div>
+                      <div className="flex-1 min-w-0">
+                        <h5 className="font-display text-base sm:text-lg font-bold uppercase text-neutral-900 tracking-tight leading-none mb-1">
+                          {tool.name}
+                        </h5>
+                        <p className="text-xs text-neutral-500 font-medium truncate">
+                          {tool.role}
+                        </p>
+                      </div>
 
-                    <span className="w-1.5 h-1.5 rounded-full bg-neutral-300 group-hover:bg-cyan-500 transition-colors"></span>
+                      <span className="w-1.5 h-1.5 rounded-full bg-neutral-300 group-hover:bg-cyan-500 transition-colors"></span>
+                    </TiltCard>
                   </motion.div>
                 ))}
               </div>
@@ -280,25 +284,28 @@ export default function AboutSection() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.4, delay: idx * 0.1 }}
-                    whileHover={{ y: -3 }}
-                    className="p-4 sm:p-5 rounded-2xl border border-[rgba(224,224,224,0.8)] bg-neutral-50/50 hover:bg-white hover:shadow-md transition-all duration-300 group"
                   >
-                    {/* Job Title */}
-                    <h5 className="font-display text-lg sm:text-xl font-bold uppercase text-neutral-900 tracking-tight mb-2 sm:mb-3 group-hover:text-black">
-                      {job.title}
-                    </h5>
+                    <TiltCard
+                      scale={1.06}
+                      className="p-4 sm:p-5 rounded-2xl border border-[rgba(224,224,224,0.8)] bg-neutral-50/50 hover:bg-white hover:shadow-xl group"
+                    >
+                      {/* Job Title */}
+                      <h5 className="font-display text-lg sm:text-xl font-bold uppercase text-neutral-900 tracking-tight mb-2 sm:mb-3 group-hover:text-black">
+                        {job.title}
+                      </h5>
 
-                    {/* Company Line */}
-                    <div className="pt-2 border-t border-neutral-200 flex items-center justify-between text-xs">
-                      <span className="text-neutral-400 font-medium uppercase tracking-wider">Company</span>
-                      <span className="font-bold text-neutral-900">{job.company}</span>
-                    </div>
+                      {/* Company Line */}
+                      <div className="pt-2 border-t border-neutral-200 flex items-center justify-between text-xs">
+                        <span className="text-neutral-400 font-medium uppercase tracking-wider">Company</span>
+                        <span className="font-bold text-neutral-900">{job.company}</span>
+                      </div>
 
-                    {/* Year Line */}
-                    <div className="pt-2 mt-2 border-t border-neutral-200 flex items-center justify-between text-xs">
-                      <span className="text-neutral-400 font-medium uppercase tracking-wider">Year</span>
-                      <span className="font-semibold text-neutral-700 px-2 py-0.5 rounded-full bg-neutral-200/60">{job.year}</span>
-                    </div>
+                      {/* Year Line */}
+                      <div className="pt-2 mt-2 border-t border-neutral-200 flex items-center justify-between text-xs">
+                        <span className="text-neutral-400 font-medium uppercase tracking-wider">Year</span>
+                        <span className="font-semibold text-neutral-700 px-2 py-0.5 rounded-full bg-neutral-200/60">{job.year}</span>
+                      </div>
+                    </TiltCard>
                   </motion.div>
                 ))}
               </div>

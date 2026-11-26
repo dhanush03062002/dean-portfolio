@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import { PROJECTS, GRAPHIC_DESIGN_WORKS } from '../assets/constants';
 import TextReveal from './TextReveal';
 import GraphicDesignModal from './GraphicDesignModal';
+import TiltCard from './TiltCard';
 
 export default function Projects() {
   const [activeCategory, setActiveCategory] = useState('all');
@@ -135,10 +136,11 @@ export default function Projects() {
                 >
                   <div className="block w-full h-full p-5 sm:p-8 hover:bg-neutral-50/50 transition-colors duration-300 cursor-none">
                     
-                    {/* ── Card Image with Framer 30px border-radius & shadow ── */}
-                    <div
+                    {/* ── Card Image with 3D Tilt + Glow ── */}
+                    <TiltCard
                       onClick={(e) => handleCardClick(e, project)}
-                      className="relative w-full overflow-hidden mb-5 cursor-pointer"
+                      scale={1.03}
+                      className="relative w-full overflow-hidden mb-5 cursor-pointer hover:shadow-2xl"
                       style={{
                         borderRadius: '30px',
                         aspectRatio: '4/3',
@@ -213,7 +215,7 @@ export default function Projects() {
                           </Link>
                         )}
                       </div>
-                    </div>
+                    </TiltCard>
 
                     {/* ── Card Footer: Title + Action buttons ── */}
                     <div className="flex items-center justify-between gap-3">

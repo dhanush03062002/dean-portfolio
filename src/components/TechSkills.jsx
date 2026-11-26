@@ -4,6 +4,7 @@ import { Boxes, Database, Network } from "lucide-react";
 import { TECH_SKILLS } from "../assets/constants";
 import CornerCross from "./CornerCross";
 import TextReveal from "./TextReveal";
+import TiltCard from "./TiltCard";
 
 function ConceptIcon({ name }) {
   const key = name.toLowerCase();
@@ -14,7 +15,10 @@ function ConceptIcon({ name }) {
 
 function SkillCard({ skill }) {
   return (
-    <div className="flex items-center gap-3.5 px-5 py-3.5 rounded-2xl border border-[rgba(224,224,224,0.8)] dark:border-neutral-800 bg-neutral-50/70 dark:bg-neutral-900/90 hover:bg-white dark:hover:bg-neutral-800 hover:border-neutral-300 dark:hover:border-neutral-600 hover:shadow-md transition-all duration-300 cursor-default group select-none shrink-0">
+    <TiltCard
+      scale={1.07}
+      className="flex items-center gap-3.5 px-5 py-3.5 rounded-2xl border border-[rgba(224,224,224,0.8)] dark:border-neutral-800 bg-neutral-50/70 dark:bg-neutral-900/90 hover:bg-white dark:hover:bg-neutral-800 hover:border-neutral-300 dark:hover:border-neutral-600 hover:shadow-xl cursor-default group select-none shrink-0"
+    >
       {/* Icon box matching AboutSection "My Stack" */}
       <div className="w-10 h-10 rounded-xl bg-white dark:bg-neutral-950 border border-neutral-200 dark:border-neutral-700 p-2 shadow-sm flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
         {skill.icon.startsWith("http") ? (
@@ -49,7 +53,7 @@ function SkillCard({ skill }) {
             : "bg-neutral-300 dark:bg-neutral-600"
         }`}
       />
-    </div>
+    </TiltCard>
   );
 }
 
